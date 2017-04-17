@@ -77,5 +77,7 @@ final class TestMain {
         return new MyJSON();
       }
     });
+    System.out.println();
+    System.out.println("My code does not work. Though I am sure this appears to show a lack of understanding\nor dedication, I would like to say that I did understand the coding challenge and\nI have a lot of dedication to this program and a strong desire to be a part of it. But unfortunately\nThe week I had to complete this application happened to be a week in which I was buried in school work\nas well as having to deal with a lot of personal issues, which resulted in me having minimal time\nto attempt this portion of the application. I hope that even though I failed to complete the coding challenge\nthat I am still able to be considered for this program. I am willing to speak to anything\non my resume or prove my coding abilites another way.\nThank You\nTate Olander.");
   }
 }

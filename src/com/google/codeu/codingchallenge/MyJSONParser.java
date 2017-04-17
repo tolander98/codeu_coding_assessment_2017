@@ -17,10 +17,29 @@ package com.google.codeu.codingchallenge;
 import java.io.IOException;
 
 final class MyJSONParser implements JSONParser {
-
+  private MyJSON json = new MyJSON();
   @Override
   public JSON parse(String in) throws IOException {
     // TODO: implement this
-    return new MyJSON();
+    while(in.indexOf(":") != -1){
+      String pair = "";
+      int comma = in.indexOf(",");
+      if(comma >= 0){
+         pair = in.substring(0, in.indexOf(","));
+      }else{
+         pair = in;
+      }
+      String x = "test";
+      int keyQuote1 = pair.indexOf("\"");
+      int keyQuote2 = pair.indexOf("\"", keyQuote1 + 1);
+      String key = pair.substring(keyQuote1+1, keyQuote2);
+      pair = pair.replace("\""+key+"\"", "");
+      int valueQuote1 = pair.indexOf("\"");
+      int valueQuote2 = pair.indexOf("\"", valueQuote1 + 1);
+      String value = pair.substring(valueQuote1+1, valueQuote2);
+      json.setString(key, value); 
+      in = in.replace(in.substring(0,in.indexOf(",")), "");    
+    }
+    return json;
   }
 }
